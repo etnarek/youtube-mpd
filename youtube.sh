@@ -10,5 +10,5 @@ umask 000
 youtube-dl -x $1 --audio-format mp3 --restrict-filenames -w -c -o "$DESTINATION/%(title)s.%(ext)s"
 for downloaded in $(youtube-dl --get-filename $1 --restrict-filenames -w -c -o "%(title)s.mp3"); do
   mpc update --wait $MPD_YOUTUBE/$downloaded
-  mpc add $MPD_YOUTUBE/$downloaded
+  mpc insert $MPD_YOUTUBE/$downloaded
 done

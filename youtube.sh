@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Be nice and reduce self-priority; avconv can take a lot of ressources and slow other process otherwise
+renice -n 10 $$ >> /dev/null
+
 #Youtube's mpd relative path
 MPD_YOUTUBE="youtube/mp3"
 
